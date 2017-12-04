@@ -220,6 +220,9 @@ void PcapSession::Open(bool live, const Nan::FunctionCallbackInfo<Value>& info)
             }
         }
 
+        // Required in order to receive packets immediately
+        pcap_set_immediate_mode(session->pcap_handle, 1);
+      
         if (pcap_activate(session->pcap_handle) != 0) {
             Nan::ThrowError(pcap_geterr(session->pcap_handle));
             return;
