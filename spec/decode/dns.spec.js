@@ -8,7 +8,7 @@ describe("Dns", function(){
     this.eventEmitter = new events.EventEmitter();
     this.instance = new Dns(this.eventEmitter);
     this.example = new Buffer("311f" + //transaction id
-                              "0100" + //flags
+                              "0000" + //flags
                               "0001" + //1 Question
                               "0000" + //0 answer RRs
                               "0000" + //0 authority RRS
